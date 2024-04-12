@@ -1,0 +1,12 @@
+git init (inicia)
+git add <nome do arquivo> (adiciona o arquivo na lista)
+git add . (adiciona todos os arquivos)
+git commit -m "<nome do commit>" 
+git push -u origin main
+
+
+
+git branch (mostra todas as branchs)
+git checkout <nome da branch> (vai pra branch que tu quer)
+git branch -d <nome da branch> (deleta a branch)
+git merge <nome da branch> (mescla as branchs)
