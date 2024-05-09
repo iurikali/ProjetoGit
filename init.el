@@ -89,7 +89,8 @@
 
 ;;Melpa repositorio
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
+	     '("melpa" . "https://melpa.org/packages/")
+	     '("elpa" . "https://elpa.gnu.org/packages/"))
 
 (package-initialize) ;Inciando os pacotes de novo
 
@@ -100,12 +101,12 @@
 (use-package try
   :ensure t)
 
-(use-package auto-complete
-  :ensure t
-  :init
-  (progn
-    (ac-config-default)
-    (global-auto-complete-mode t)))
+;;(use-package auto-complete
+;;  :ensure t
+;;  :init
+;;  (progn
+;;    (ac-config-default)
+;;    (global-auto-complete-mode t)))
 
 (use-package all-the-icons
   :ensure t)
@@ -131,6 +132,15 @@
   :ensure t
   :init (global-flycheck-mode t))
 
+;;Auto-complete
+(use-package company
+  :ensure t
+  :init
+  (add-hook 'after-init-hook 'global-company-mode)
+  :config
+  (setq company-minimum-prefix-length 2))
+
+
 ;;Alt-0 mata o buffer
 ;;Alt-A abre a linha de comand
 ;;C-\ abre o neotree
@@ -146,6 +156,8 @@
 
 
 
+(setq c-default-style "linux"
+      c-basic-offset 4)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -153,7 +165,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(flycheck ergoemacs-mode all-the-icons neotree try auto-complete)))
+   '(company-irony aggressive-indent cape company flycheck ergoemacs-mode all-the-icons neotree try auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
